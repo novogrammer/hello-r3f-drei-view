@@ -2,12 +2,10 @@ import { Canvas } from '@react-three/fiber'
 import './App.css'
 import Hero from './Hero'
 import { StatsGl } from '@react-three/drei'
-import { useRef } from 'react';
 import About from './About';
+import { TunnelR3f } from './TunnelR3f';
 
 function App() {
-  const heroDivElementRef = useRef<HTMLDivElement>(null!);
-  const aboutDivElementRef = useRef<HTMLDivElement>(null!);
   return (
     <>
       <div style={{
@@ -19,22 +17,15 @@ function App() {
       }}>
         <Canvas>
           <StatsGl/>
-          <Hero track={heroDivElementRef}/>
-          <About track={aboutDivElementRef}/>
+          <TunnelR3f.Out/>
 
         </Canvas>
       </div>
       <div style={{
           position:"relative",
       }}>
-        <div ref={heroDivElementRef} style={{
-          width:"100%",
-          height:"100svh",
-        }} />
-        <div ref={aboutDivElementRef} style={{
-          width:"100%",
-          height:"100svh",
-        }} />
+        <Hero/>
+        <About/>
       </div>
 
     </>
