@@ -7,6 +7,7 @@ import { TunnelR3f } from './TunnelR3f';
 import { useEffect, useRef } from 'react';
 import { useCountStore } from './CountStore';
 import Scene03 from './Scene03';
+// import Scene04 from './Scene04';
 
 function App() {
   const incrementCount=useCountStore((state)=>state.increseCount);
@@ -42,6 +43,7 @@ function App() {
         <Scene01/>
         <Scene02/>
         <Scene03/>
+        {/* <Scene04/> */}
       </div>
 
     </>
