@@ -1,10 +1,22 @@
 import { Float, PerspectiveCamera,  View } from "@react-three/drei";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { TunnelR3f } from "./TunnelR3f";
 
+function Box(){
+  const [hovered, setHover] = useState(false);
+  return <mesh
+    onPointerOver={() => setHover(()=>true)}
+    onPointerOut={() => setHover(()=>false)}
+  >
+    <boxGeometry args={[1, 1, 1]} />
+    <meshStandardMaterial color={hovered ? 'hotpink' : 'orange'}  />
+  </mesh>;
+
+}
 
 
 export default function Scene01(){
+  console.log("Scene01");
   const trackRef = useRef<HTMLDivElement>(null!);
   return <>
     <div ref={trackRef} style={{
@@ -18,10 +30,7 @@ export default function Scene01(){
         <ambientLight intensity={0.6} />
         <directionalLight intensity={1.0} position={[0, 3, 5]}/>
         <Float>
-          <mesh>
-            <boxGeometry args={[1, 1, 1]} />
-            <meshStandardMaterial color={'orange'} />
-          </mesh>
+          <Box/>
         </Float>
       </View>
     </TunnelR3f.In>
