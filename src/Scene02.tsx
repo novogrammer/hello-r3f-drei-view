@@ -4,7 +4,7 @@ import { TunnelR3f } from "./TunnelR3f";
 
 
 
-export default function Hero(){
+export default function Scene02(){
   const trackRef = useRef<HTMLDivElement>(null!);
   return <>
     <div ref={trackRef} style={{
@@ -13,7 +13,7 @@ export default function Hero(){
     }} />
     <TunnelR3f.In>
       <View track={trackRef}>
-        <color attach="background" args={["hotpink"]}/>
+      <color attach="background" args={["skyblue"]}/>
         <PerspectiveCamera makeDefault position={[0,0,5]} fov={30} />
         <ambientLight intensity={0.6} />
         <directionalLight intensity={1.0} position={[0, 3, 5]}/>
@@ -23,6 +23,7 @@ export default function Hero(){
             <meshStandardMaterial color={'orange'} />
           </mesh>
         </Float>
+        
       </View>
     </TunnelR3f.In>
   </>;

@@ -1,8 +1,8 @@
 import { Canvas } from '@react-three/fiber'
 import './App.css'
-import Hero from './Hero'
+import Scene01 from './Scene01'
 import { StatsGl } from '@react-three/drei'
-import About from './About';
+import Scene02 from './Scene02';
 import { TunnelR3f } from './TunnelR3f';
 
 function App() {
@@ -24,8 +24,8 @@ function App() {
       <div style={{
           position:"relative",
       }}>
-        <Hero/>
-        <About/>
+        <Scene01/>
+        <Scene02/>
       </div>
 
     </>
