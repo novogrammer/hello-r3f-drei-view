@@ -6,6 +6,7 @@ import Scene02 from './Scene02';
 import { TunnelR3f } from './TunnelR3f';
 import { useEffect, useRef } from 'react';
 import { useCountStore } from './CountStore';
+import Scene03 from './Scene03';
 
 function App() {
   const incrementCount=useCountStore((state)=>state.increseCount);
@@ -13,7 +14,7 @@ function App() {
   useEffect(()=>{
     const intervalId=setInterval(()=>{
       incrementCount();
-    },1000);
+    },1000*0.1);
     return ()=>{
       clearInterval(intervalId);
     }
@@ -29,7 +30,7 @@ function App() {
         width:"100%",
         height:"100%",
       }}>
-        <Canvas eventSource={containerRef}>
+        <Canvas eventSource={containerRef} shadows={'soft'}>
           <StatsGl/>
           <TunnelR3f.Out/>
 
@@ -40,6 +41,7 @@ function App() {
       }}>
         <Scene01/>
         <Scene02/>
+        <Scene03/>
       </div>
 
     </>
