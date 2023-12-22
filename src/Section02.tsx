@@ -40,8 +40,8 @@ function Count(){
   </>);
 }
 
-export default function Scene02(){
-  console.log("Scene02");
+export default function Section02(){
+  console.log("Section02");
   const trackRef = useRef<HTMLDivElement>(null!);
   return <>
     <div ref={trackRef} style={{

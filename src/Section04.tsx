@@ -3,8 +3,8 @@ import { useRef } from "react";
 import { TunnelR3f } from "./TunnelR3f";
 
 
-export default function Scene04(){
-  console.log("Scene04");
+export default function Section04(){
+  console.log("Section04");
   const trackRef = useRef<HTMLDivElement>(null!);
   return <>
     <div ref={trackRef} style={{

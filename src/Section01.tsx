@@ -16,8 +16,8 @@ function Box(){
 }
 
 
-export default function Scene01(){
-  console.log("Scene01");
+export default function Section01(){
+  console.log("Section01");
   const trackRef = useRef<HTMLDivElement>(null!);
   return <>
     <div ref={trackRef} style={{

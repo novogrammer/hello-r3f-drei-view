@@ -1,15 +1,15 @@
 import { Canvas } from '@react-three/fiber'
 import './App.css'
-import Scene01 from './Scene01'
+import Section01 from './Section01'
 import { StatsGl } from '@react-three/drei'
-import Scene02 from './Scene02';
+import Section02 from './Section02';
 import { TunnelR3f } from './TunnelR3f';
 import { useEffect, useRef } from 'react';
 import { useCountStore } from './CountStore';
-import Scene03 from './Scene03';
-import Scene05 from './Scene05';
-// import Scene00 from './Scene00';
-// import Scene04 from './Scene04';
+import Section03 from './Section03';
+import Section05 from './Section05';
+// import Section00 from './Section00';
+// import Section04 from './Section04';
 
 function App() {
   const incrementCount=useCountStore((state)=>state.increseCount);
@@ -42,12 +42,12 @@ function App() {
       <div ref={containerRef} style={{
           position:"relative",
       }}>
-        {/* <Scene00/> */}
-        <Scene01/>
-        <Scene02/>
-        <Scene03/>
-        {/* <Scene04/> */}
-        <Scene05/>
+        {/* <Section00/> */}
+        <Section01/>
+        <Section02/>
+        <Section03/>
+        {/* <Section04/> */}
+        <Section05/>
       </div>
 
     </>
