@@ -11,6 +11,7 @@ import Section05 from './Section05';
 import Section06 from './Section06';
 import Section07 from './Section07';
 import Section08 from './Section08';
+import Section09 from './Section09';
 // import Section00 from './Section00';
 // import Section04 from './Section04';
 
@@ -54,6 +55,7 @@ function App() {
         <Section06/>
         <Section07/>
         <Section08/>
+        <Section09/>
       </div>
 
     </>
