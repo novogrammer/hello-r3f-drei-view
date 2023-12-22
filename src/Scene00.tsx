@@ -1,7 +1,6 @@
 import { Float, PerspectiveCamera, View } from "@react-three/drei";
 import { useRef } from "react";
 import { TunnelR3f } from "./TunnelR3f";
-import { useCountStore } from "./CountStore";
 
 
 function MyScene(){
