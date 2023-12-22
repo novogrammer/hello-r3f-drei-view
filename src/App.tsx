@@ -8,6 +8,7 @@ import { useEffect, useRef } from 'react';
 import { useCountStore } from './CountStore';
 import Scene03 from './Scene03';
 import Scene05 from './Scene05';
+// import Scene00 from './Scene00';
 // import Scene04 from './Scene04';
 
 function App() {
@@ -41,6 +42,7 @@ function App() {
       <div ref={containerRef} style={{
           position:"relative",
       }}>
+        {/* <Scene00/> */}
         <Scene01/>
         <Scene02/>
         <Scene03/>
