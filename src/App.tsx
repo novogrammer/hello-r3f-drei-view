@@ -8,6 +8,8 @@ import { useEffect, useRef } from 'react';
 import { useCountStore } from './CountStore';
 import Section03 from './Section03';
 import Section05 from './Section05';
+import Section06 from './Section06';
+import Section07 from './Section07';
 // import Section00 from './Section00';
 // import Section04 from './Section04';
 
@@ -48,6 +50,8 @@ function App() {
         <Section03/>
         {/* <Section04/> */}
         <Section05/>
+        <Section06/>
+        <Section07/>
       </div>
 
     </>
