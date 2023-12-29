@@ -1,10 +1,10 @@
 import { Canvas } from '@react-three/fiber'
 import './App.css'
 import Section01 from './Section01'
-import { StatsGl } from '@react-three/drei'
+import { Loader, StatsGl } from '@react-three/drei'
 import Section02 from './Section02';
 import { TunnelR3f } from './TunnelR3f';
-import { useEffect, useRef } from 'react';
+import { Suspense, useEffect, useRef } from 'react';
 import { useCountStore } from './CountStore';
 import Section03 from './Section03';
 import Section05 from './Section05';
@@ -14,6 +14,7 @@ import Section08 from './Section08';
 import Section09 from './Section09';
 import Section10 from './Section10';
 import Section11 from './Section11';
+import Section12 from './Section12';
 // import Section00 from './Section00';
 // import Section04 from './Section04';
 
@@ -41,9 +42,11 @@ function App() {
       }}>
         <Canvas eventSource={containerRef} shadows={'soft'}>
           <StatsGl/>
-          <TunnelR3f.Out/>
-
+          <Suspense fallback={null}>
+            <TunnelR3f.Out/>
+          </Suspense>
         </Canvas>
+        <Loader/>
       </div>
       <div ref={containerRef} style={{
           position:"relative",
@@ -60,6 +63,7 @@ function App() {
         <Section09/>
         <Section10/>
         <Section11/>
+        <Section12/>
       </div>
 
     </>
