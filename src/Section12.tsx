@@ -33,7 +33,7 @@ function MyScene(){
   return (
     <>
 
-    <color attach="background" args={["white"]}/>
+    <color attach="background" args={["yellow"]}/>
     <PerspectiveCamera makeDefault position={[0,0,5]} fov={30} />
     <ambientLight intensity={0.6} />
     <directionalLight intensity={1.0} position={[0, 3, 5]}/>
