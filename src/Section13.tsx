@@ -1,24 +1,25 @@
 import { Float, PerspectiveCamera, Svg, View } from "@react-three/drei";
-import { Suspense, useEffect, useRef } from "react";
+import { Suspense, useRef } from "react";
 import { TunnelR3f } from "./TunnelR3f";
 import * as THREE from "three";
+import { MeshBasicMaterialProps, useFrame } from "@react-three/fiber";
 
 
 function MyScene(){
   const tigerRef=useRef<THREE.Object3D>(null);
-  useEffect(()=>{
+  useFrame((_state,dt)=>{
     if(!tigerRef.current){
       throw new Error("tigerRef.current is null");
     }
     const tiger=tigerRef.current;
-    tiger.traverse((object3d:THREE.Object3D)=>{
-      if(object3d instanceof THREE.Mesh){
-        const mesh=object3d;
-        mesh.material.transparent=false;
-      }
-    })
-    
-  },[])
+    tiger.rotateY(dt);
+  });
+  const fillMaterialProps:MeshBasicMaterialProps={
+    transparent:false,
+  };
+  const strokeMaterialProps:MeshBasicMaterialProps={
+    transparent:false,
+  };
   return (
     <>
     <color attach="background" args={["green"]}/>
@@ -27,7 +28,7 @@ function MyScene(){
     <directionalLight intensity={1.0} position={[0, 3, 5]}/>
     <Float rotationIntensity={10} position={[-1,0,0]}>
       <Suspense fallback={null}>
-        <Svg ref={tigerRef} src="svgs/tiger.svg" scale={1/500} position={[-0.5,0.5,0]}/>
+        <Svg ref={tigerRef} src="svgs/tiger.svg" scale={1/500} position={[-0.5,0.5,0]} fillMaterial={fillMaterialProps} strokeMaterial={strokeMaterialProps}/>
       </Suspense>
     </Float>
     <Float rotationIntensity={10} position={[1,0,0]}>
